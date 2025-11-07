@@ -10,4 +10,6 @@ ai eu corrigia outra hora eu errava pedia ajuda para corrigir o erro e Ia corrig
 do jeito que eu queria tinha erros que perdia tempo tentando resolver enchia o sistema de código repedido pedia Trae IA
 removia os códigos repedidos mesmo marcando os código fica difícil achar os erros com muitos códigos repetidos
 e o sistema corrigia muito bom este sistema Trae IA.
+Este sistema não foi feito para Desktop não é responsivo.
+Espera que alguem tenha gostado.
 
