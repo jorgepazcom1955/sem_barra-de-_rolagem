@@ -392,10 +392,10 @@ tbody td {
   margin-bottom: 20px;
 }
 
-.total-value {
-  font-size: 32px;
+#total-value {
+  font-size: 50px;
   font-weight: bold;
-  color: #4CAF50;
+  color:#4CAF50;
 }
 
 .payment-methods {
