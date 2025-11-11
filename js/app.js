@@ -484,7 +484,7 @@ function buscarProduto() {
             mostrarModal("balanca-modal");
         } else {
             // Produto normal, adicionar diretamente
-            adicionarAoCarrinho(produto, "1");
+            adicionarAoCarrinho(produto, 1);
         }
         document.getElementById("product-search").value = "";
         document.getElementById("product-search").focus();
@@ -496,21 +496,23 @@ function buscarProduto() {
 }
 
 function adicionarAoCarrinho(produto, quantidade) {
+    const qtd = Number(quantidade) || 1;
     const itemExistente = carrinhoAtual.find(item => item.id === produto.id);
-    
+
     if (itemExistente) {
-        itemExistente.quantidade += quantidade;
+        const atual = Number(itemExistente.quantidade) || 0;
+        itemExistente.quantidade = atual + qtd;
         itemExistente.subtotal = itemExistente.quantidade * itemExistente.preco;
     } else {
         carrinhoAtual.push({
             id: produto.id,
             nome: produto.nome,
             preco: produto.preco,
-            quantidade: quantidade,
-            subtotal: produto.preco * quantidade
+            quantidade: qtd,
+            subtotal: produto.preco * qtd
         });
     }
-    
+
     atualizarCarrinho();
 }
 
@@ -520,13 +522,14 @@ function removerDoCarrinho(indice) {
 }
 
 function atualizarQuantidade(index, novaQuantidade) {
-    if (novaQuantidade <= 0) {
+    const qtd = Number(novaQuantidade);
+    if (!Number.isFinite(qtd) || qtd <= 0) {
         removerDoCarrinho(index);
         return;
     }
     
-    carrinhoAtual[index].quantidade = novaQuantidade;
-    carrinhoAtual[index].subtotal = carrinhoAtual[index].preco * novaQuantidade;
+    carrinhoAtual[index].quantidade = qtd;
+    carrinhoAtual[index].subtotal = carrinhoAtual[index].preco * qtd;
     atualizarCarrinho();
 }
 
