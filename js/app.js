@@ -79,8 +79,8 @@ function mostrarNotificacaoSalvamento() {
     }
     
     // Mostrar notificação
-    notificacao.textContent = 'Dados salvos com sucesso!';
-    notificacao.style.opacity = '1';
+    //notificacao.textContent = 'Dados salvos com sucesso!';
+    //notificacao.style.opacity = '1';
     
     // Esconder após 2 segundos
     setTimeout(() => {
